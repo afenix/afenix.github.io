@@ -442,9 +442,6 @@ a {
 	@media (--bp-small) {
 	  margin: 0 -2rem 2rem;
 	}
-	@media (--bp-room-to-move) {
-	  margin: 0 0 3rem;
-	}
 }
 
 .group-legend__hint {
