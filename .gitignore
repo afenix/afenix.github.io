@@ -6,3 +6,4 @@
 *.scssc
 /node_modules/*
 /gh-pages
+*.tm2
