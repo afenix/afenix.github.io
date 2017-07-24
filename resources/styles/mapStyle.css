@@ -501,7 +501,7 @@ a {
   line-height: 1.25;
 }
 
-@media (min-width: 37.5rem) and (min-height: 60rem) {
+@media (min-width: 37.5rem) and (min-height: 40rem) {
 
  .group-legend__hint {
   padding: 1rem;
