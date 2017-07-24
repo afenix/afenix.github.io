@@ -1139,69 +1139,63 @@ li.popup-list {
  
 .search__groups__item {
 	list-style: none;
-	margin: 0;
+	margin: .25rem .125rem 0 0;
 	font-size: var(--epsilon);
 	display: inline-block;
-	background-color: gray(70%);
+	background-color: gray(95%);
+	color: rgba(var(--text), .8);
 	padding: .25rem .5rem;
-	color: rgba(var(--light), .8);
-	border-radius: .5rem;
+	border-radius: .25rem;
+	border-left: .25rem solid transparent;
 	font-weight: 700;
+	min-width: 5rem;
+	text-align: left;
 }
 
 .search__groups__item .numeral {
-	color: rgba(var(--light), 1);
+	/* color: rgba(var(--light), 1); */
 	padding-left:2px;
+	font-weight: 500;
 }
 
 .search__groups__item.east {
-	background-color: #FB9A99;
-	margin-right: 5px;
+	border-color: #FB9A99;
 }
 
 .search__groups__item.wrlc {
-	background-color: #6A3D9A;
-	margin-right: 5px;
+	border-color: #6A3D9A;
 }
 
 .search__groups__item.mi-spi {
-	background-color: #FF4847;
-	margin-right: 5px;
+	border-color: #FF4847;
 }
 
 .search__groups__item.viva {
-	background-color: #CAB2D6;
-	margin-right: 5px;
+	border-color: #CAB2D6;
 }
 
 .search__groups__item.ci-cci {
-	background-color: #6A3D9A;
-	margin-right: 5px;
+	border-color: #6A3D9A;
 }
 
 .search__groups__item.ali {
-	background-color: #A6CEE3;
-	margin-right: 5px;
+	border-color: #A6CEE3;
 }
 
 .search__groups__item.coppul {
-	background-color: #33A02C;
-	margin-right: 5px;
+	border-color: #33A02C;
 }
 
 .search__groups__item.tug {
-	background-color: #FF7F00;
-	margin-right: 5px;
+	border-color: #FF7F00;
 }
 
 .search__groups__item.scelc {
-	background-color: #036564;
-	margin-right: 5px;
+	border-color: #036564;
 }
 
 .search__groups__item.mms {
-	background-color: #666666;
-	margin-right: 5px;
+	border-color: #666666;
 }
 /* End Search Result Groups */
 
