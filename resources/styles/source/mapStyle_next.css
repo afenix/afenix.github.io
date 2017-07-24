@@ -341,11 +341,9 @@ a {
 */
 
 .map__wrap { 
-    width: 100vw;
+    width: 100%;
     position: relative;
-    margin-left: -50vw;
     height: 350px;
-    left: 50%;
 }
 
 /* Begin Titles Legend */
@@ -450,11 +448,12 @@ a {
 
 .group-legend__hint {
 	font-weight: 500;
-	padding: .5rem .75rem;
+	padding: .75rem .25rem;
 	margin: 0 auto;
 	text-align: center;
 	background: gray(85%);
-  font-size: var(--base-minor);
+  font-size: var(--base-majorly-minor);
+  line-height: 1.25;
 	@media (--bp-room-to-view) {
     	padding: 1rem;
   	  font-size: var(--base);
@@ -473,6 +472,7 @@ a {
 #group-legend-elements {
 	display: flex;
 	flex-wrap: wrap;
+	padding: .125rem;
 	@media (--bp-medium) {
   	  margin-left: calc(-50vw + 50%);
   	  margin-right: calc(-50vw + 50%);
@@ -493,9 +493,11 @@ a {
 
 .group-div { /* See specific colors for various groups below */
 	cursor: pointer;
-	padding: .35rem .75rem;
+	padding: .0625rem .75rem;
 	background-color: gray(95%);
+	display:inline-block;
 	flex: 1 0 3rem;
+	/* min-width: 3rem; */
 	position: relative;
 	color: rgba(var(--light), 1);
 	text-align: center;
@@ -504,6 +506,8 @@ a {
   line-height: var(--base);
   font-size: var(--base-minor);
   	border: .25rem solid transparent;
+  	border-radius: .25rem;
+  	margin: .125rem;
 	@media (--bp-room-to-view) {
     	padding: 1rem;
     	text-align: left;
