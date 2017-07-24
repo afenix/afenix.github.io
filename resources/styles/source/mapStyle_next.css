@@ -448,11 +448,7 @@ a {
 
 .group-legend__hint {
 	font-weight: 500;
-<<<<<<< HEAD
 	padding: .75rem .5rem;
-=======
-	padding: .75rem .25rem;
->>>>>>> feature/presentation
 	margin: 0 auto;
 	text-align: center;
 	background: gray(85%);
@@ -476,11 +472,7 @@ a {
 #group-legend-elements {
 	display: flex;
 	flex-wrap: wrap;
-<<<<<<< HEAD
 	padding: .25rem;
-=======
-	padding: .125rem;
->>>>>>> feature/presentation
 	@media (--bp-medium) {
   	  margin-left: calc(-50vw + 50%);
   	  margin-right: calc(-50vw + 50%);
@@ -501,19 +493,11 @@ a {
 
 .group-div { /* See specific colors for various groups below */
 	cursor: pointer;
-<<<<<<< HEAD
 	padding: .0625rem 0 .0625rem 1.25rem;
   background-color: #ffffff;
 	display:inline-block;
 	flex: 1 0 4rem;
 	min-width: 4rem;
-=======
-	padding: .0625rem .75rem;
-	background-color: gray(95%);
-	display:inline-block;
-	flex: 1 0 3rem;
-	/* min-width: 3rem; */
->>>>>>> feature/presentation
 	position: relative;
 	/* color: rgba(var(--light), 1); */
 	text-align: left;
