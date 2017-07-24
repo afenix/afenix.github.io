@@ -773,7 +773,7 @@ a {
   }
 }
 
-.group-div--MSCS {
+.group-div--MSCC {
   background-color: #FDBF6F;
   color: rgba(var(--text), 1);
 	@media (--bp-room-to-view) {
@@ -781,14 +781,14 @@ a {
   }
 }
 
-.group-div--MSCS.selected {
+.group-div--MSCC.selected {
   border-color: #FDBF6F;
 	@media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
-.group-div--MSCS::before { /* Pseudo-element stripe for larger screens */
+.group-div--MSCC::before { /* Pseudo-element stripe for larger screens */
 	@media (--bp-room-to-view) {
     background-color: #FDBF6F;
   }

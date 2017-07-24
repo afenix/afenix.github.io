@@ -139,7 +139,7 @@ function initGL() {
                         ['SCELC', '#036564'],
                         ['EAST', '#FB9A99'],
                         ['MI-SPI', '#FF4847'],
-                        ['MSCS', '#FDBF6F'],
+                        ['MSCC', '#FDBF6F'],
                         ['TUG', '#6A3D9A'],
                         ['VIVA', '#CAB2D6'],
                         ['WRLC', '#1F78B4']]
@@ -201,10 +201,12 @@ function addGroupFunctionality(map, browser) {
     // Add the Overview title and description on page load
     groupName.textContent = libraries[0].title;
     groupDescription.textContent = libraries[0].description;
+    groupDescription.textContent.innerHTML = libraries[0].description;
+console.log('groupDescription');console.log(groupDescription);
     var groupInfo = [{
             "group_name": "Overview",
             "group_color": "#666666",
-            "group_count": "19.7M Titles"
+            "group_count": "19.7M Holdings"
         },
         {
             "group_name": "SCELC",
@@ -257,7 +259,7 @@ function addGroupFunctionality(map, browser) {
             "group_count": "5.75M"
         },
         {
-            "group_name": "MSCS",
+            "group_name": "MSCC",
             "group_color": "#FDBF6F",
             "group_count": "1.4M"
         }
@@ -334,11 +336,10 @@ function addGroupFunctionality(map, browser) {
     });
 }
 
-
 var libraries = [{
         "id": "12",
         "title": "Shared Print Overview",
-        "description": "Models and retention criteria vary according to local and regional priorities, but most of the committed titles are secured under formal Memoranda of Understanding (MOU) for 15 years, often with review every five years. In some respects, these are grass-roots activities, designed to address local needs, but it seems clear that these programs can contribute significantly to a federated national or international solution, such as that envisioned by the MLA’s Working Group on The Future of the Print Record.",
+        "description": "Models and retention criteria vary according to local and regional priorities, but most of the committed holdings are secured under formal Memoranda of Understanding (MOU) for fifteen years, often with review every five years. Although current programs are designed to address local needs, they can be seen as building blocks, or nodes in a growing network. They will contribute significantly to a federated national or international solution, such as that envisioned by the MLA’s Working Group on the Future of the Print Record (https://printrecord.mla.hcommons.org).",
         "members": [],
         "camera": {
             center: [-100.722656, 42.793385],
@@ -503,8 +504,8 @@ var libraries = [{
         "zoomJS": 6
     }, {
         "id": "2",
-        "title": "MSCS",
-        "description": "The Maine Shared Collections Strategy (MSCS) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 260,398 thousand of those titles being uniquely retained by this group. ",
+        "title": "MSCC",
+        "description": "The Maine Shared Collections Cooperative (MSCC) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCC has been able to retain a shared print collection of 1,408,737 title-holdings, with 260,398 thousand of those titles being uniquely retained by this group. ",
         "members": ["Bangor Public Library","Bates College","Bowdoin College","Colby College","Maine State Library","Portland Public Library","University of Maine Orono","University of Southern Maine"],
         "twitter": "https://twitter.com/MESharedColls",
         "website": "http://www.maineinfonet.org/mscs/about/",
