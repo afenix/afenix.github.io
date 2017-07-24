@@ -636,7 +636,7 @@ a {
 }
 
 .group-div--COPPUL.selected {
-  border-color: #33A02C;
+  /* border-color: #33A02C; */
 	@media (--bp-room-to-view) {
     border-color: gray(95%);
   }
@@ -645,6 +645,16 @@ a {
 .group-div--COPPUL::before { /* Pseudo-element stripe for larger screens */
   background-color: #33A02C;
 	@media (--bp-room-to-view) {
+    background-color: #33A02C;
+  }
+}
+
+.group-div--COPPUL.selected::before,
+.group-div--COPPUL:hover::before { /* Pseudo-element stripe for larger screens */
+  border-color: #33A02C;
+  background-color: #ffffff;
+	@media (--bp-room-to-view) {
+    	border: none;
     background-color: #33A02C;
   }
 }
