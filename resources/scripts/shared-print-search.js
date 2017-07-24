@@ -22,32 +22,32 @@ function searchSolrTitles() {
         for (var index = 0; index < holding.group_ids.length; index++) {
             var group_inst_id = holding.group_ids[index];
             if (group_inst_id == 1013) {
-                var east = "<li class='search__groups__item east'>" + "EAST" + "<span class='numeral'>15yr</span></li>";  
+                var east = "<li class='search__groups__item east'>" + "EAST" + "<span class='numeral'>15yr</span></li>\n";  
                 row+= east;
             }
             if (group_inst_id == 1014) {
-                var mispi = "<li class='search__groups__item mi-spi'>" + "MI-SPI" + "<span class='numeral'>15yr</span></li>"; 
+                var mispi = "<li class='search__groups__item mi-spi'>" + "MI-SPI" + "<span class='numeral'>15yr</span></li>\n"; 
                 row+= mispi;
             } 
             if (group_inst_id == 5761) {
-                var coppul = "<li class='search__groups__item coppul'>" + "COPPUL" + "<span class='numeral'>15yr</span></li>";
+                var coppul = "<li class='search__groups__item coppul'>" + "COPPUL" + "<span class='numeral'>15yr</span></li>\n";
                 row+= coppul;  
             }
             if (group_inst_id == 8627) {
-                var ali = "<li class='search__groups__item ali'>" + "ALI" + "<span class='numeral'>15yr</span></li>";
+                var ali = "<li class='search__groups__item ali'>" + "ALI" + "<span class='numeral'>15yr</span></li>\n";
                 row+= ali;
             }
             if (group_inst_id == 9003) {
-                var scelc = "<li class='search__groups__item scelc'>" + "SCELC" + "<span class='numeral'>15yr</span></li>"; 
+                var scelc = "<li class='search__groups__item scelc'>" + "SCELC" + "<span class='numeral'>15yr</span></li>\n"; 
                 row+= scelc; 
             } 
             if (group_inst_id == 9808) {
-                var mms = "<li class='search__groups__item mms'>" + "MMS" + "<span class='numeral'>15yr</span></li>"; 
+                var mms = "<li class='search__groups__item mms'>" + "MMS" + "<span class='numeral'>15yr</span></li>\n"; 
                 row+= mms;
             }
         }
         row+= "</ul></div><a href='http://worldcat.org/oclc/" + holding.worldcat_oclc_nbr +
-        "' class='search__item__link' target='_blank' rel='noopener noreferrer'><img src='resources/images/WorldCat_Logo_V_Color.png' alt='WorldCat Logo' width='48'></a></li>" ;
+        "' class='search__item__link' target='_blank' rel='noopener noreferrer'><img src='resources/images/WorldCat_Logo_V_Color.png' alt='WorldCat Logo' width='48'></a></li>\n" ;
     }
     $("#solr_results").append(row);    
   });
