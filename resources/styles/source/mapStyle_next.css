@@ -449,15 +449,12 @@ a {
 
 .group-legend__hint {
 	font-weight: 500;
-<<<<<<< Updated upstream
-	padding: .5rem .75rem;
-=======
 	padding: .75rem .5rem;
->>>>>>> Stashed changes
 	margin: 0 auto;
 	text-align: center;
 	background: gray(85%);
-  font-size: var(--base-minor);
+  font-size: var(--base-majorly-minor);
+  line-height: 1.25;
 	@media (--bp-room-to-view) {
     	padding: 1rem;
   	  font-size: var(--base);
@@ -476,10 +473,7 @@ a {
 #group-legend-elements {
 	display: flex;
 	flex-wrap: wrap;
-<<<<<<< Updated upstream
-=======
 	padding: .25rem;
->>>>>>> Stashed changes
 	@media (--bp-medium) {
   	  margin-left: calc(-50vw + 50%);
   	  margin-right: calc(-50vw + 50%);
@@ -496,17 +490,11 @@ a {
 
 .group-div { /* See specific colors for various groups below */
 	cursor: pointer;
-<<<<<<< Updated upstream
-	padding: .35rem .75rem;
-	background-color: gray(95%);
-	flex: 1 0 3rem;
-=======
 	padding: .0625rem 0 .0625rem 1.25rem;
   background-color: #ffffff;
 	display:inline-block;
 	flex: 1 0 4rem;
 	min-width: 4rem;
->>>>>>> Stashed changes
 	position: relative;
 	/* color: rgba(var(--light), 1); */
 	text-align: left;
