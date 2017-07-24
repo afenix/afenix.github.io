@@ -201,8 +201,7 @@ function addGroupFunctionality(map, browser) {
     // Add the Overview title and description on page load
     groupName.textContent = libraries[0].title;
     groupDescription.textContent = libraries[0].description;
-    groupDescription.textContent.innerHTML = libraries[0].description;
-console.log('groupDescription');console.log(groupDescription);
+
     var groupInfo = [{
             "group_name": "Overview",
             "group_color": "#666666",
