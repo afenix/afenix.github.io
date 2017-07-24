@@ -63,7 +63,8 @@
 
 @custom-media --bp-tiny (min-width: 23.4375rem);
 @custom-media --bp-small (min-width: 30rem);
-@custom-media --bp-medium (min-width: 60rem);
+@custom-media --bp-medium (min-width: 57rem);
+@custom-media --bp-large (min-width: 64rem);
 @custom-media --bp-room-to-view (min-width: 37.5rem) and (min-height: 60rem);
 
 
@@ -90,6 +91,9 @@ body {
 	margin: 2rem auto;
 	box-sizing: border-box;
 	@media (--bp-medium) {
+	  margin: 3rem auto;
+	}
+	@media (--bp-large) {
 	  margin: 6rem auto;
 	}
 }
@@ -337,11 +341,9 @@ a {
 */
 
 .map__wrap { 
-    width: 100vw;
+    width: 100%;
     position: relative;
-    margin-left: -50vw;
     height: 350px;
-    left: 50%;
 }
 
 /* Begin Titles Legend */
@@ -442,14 +444,15 @@ a {
 	@media (--bp-small) {
 	  margin: 0 -2rem 2rem;
 	}
-	@media (--bp-room-to-move) {
-	  margin: 0 0 3rem;
-	}
 }
 
 .group-legend__hint {
 	font-weight: 500;
+<<<<<<< HEAD
 	padding: .75rem .5rem;
+=======
+	padding: .75rem .25rem;
+>>>>>>> feature/presentation
 	margin: 0 auto;
 	text-align: center;
 	background: gray(85%);
@@ -473,10 +476,18 @@ a {
 #group-legend-elements {
 	display: flex;
 	flex-wrap: wrap;
+<<<<<<< HEAD
 	padding: .25rem;
+=======
+	padding: .125rem;
+>>>>>>> feature/presentation
 	@media (--bp-medium) {
   	  margin-left: calc(-50vw + 50%);
   	  margin-right: calc(-50vw + 50%);
+  	  margin-bottom: 2rem;
+	}
+	@media (--bp-large) {
+	  margin-bottom: 4rem;
 	}
 	@media (--bp-room-to-view) {
     	padding: 0 2rem;
@@ -490,11 +501,19 @@ a {
 
 .group-div { /* See specific colors for various groups below */
 	cursor: pointer;
+<<<<<<< HEAD
 	padding: .0625rem 0 .0625rem 1.25rem;
   background-color: #ffffff;
 	display:inline-block;
 	flex: 1 0 4rem;
 	min-width: 4rem;
+=======
+	padding: .0625rem .75rem;
+	background-color: gray(95%);
+	display:inline-block;
+	flex: 1 0 3rem;
+	/* min-width: 3rem; */
+>>>>>>> feature/presentation
 	position: relative;
 	/* color: rgba(var(--light), 1); */
 	text-align: left;
@@ -503,6 +522,8 @@ a {
   line-height: var(--base);
   font-size: var(--base-minor);
   	border: .25rem solid transparent;
+  	border-radius: .25rem;
+  	margin: .125rem;
 	@media (--bp-room-to-view) {
     background-color: gray(95%);
     	padding: 1rem;
@@ -1021,6 +1042,9 @@ li.popup-list {
 	margin: 0 -.5rem;
 	padding: 2rem 1rem;
 	@media (--bp-medium) {
+	  padding: 3rem 1rem;
+	}
+	@media (--bp-large) {
 	  padding: 6rem 1rem;
 	}
 }
@@ -1189,69 +1213,63 @@ li.popup-list {
  
 .search__groups__item {
 	list-style: none;
-	margin: 0;
+	margin: .25rem .125rem 0 0;
 	font-size: var(--epsilon);
 	display: inline-block;
-	background-color: gray(70%);
+	background-color: gray(95%);
+	color: rgba(var(--text), .8);
 	padding: .25rem .5rem;
-	color: rgba(var(--light), .8);
-	border-radius: .5rem;
+	border-radius: .25rem;
+	border-left: .25rem solid transparent;
 	font-weight: 700;
+	min-width: 5rem;
+	text-align: left;
 }
 
 .search__groups__item .numeral {
-	color: rgba(var(--light), 1);
+	/* color: rgba(var(--light), 1); */
 	padding-left:2px;
+	font-weight: 500;
 }
 
 .search__groups__item.east {
-	background-color: #FB9A99;
-	margin-right: 5px;
+	border-color: #FB9A99;
 }
 
 .search__groups__item.wrlc {
-	background-color: #6A3D9A;
-	margin-right: 5px;
+	border-color: #6A3D9A;
 }
 
 .search__groups__item.mi-spi {
-	background-color: #FF4847;
-	margin-right: 5px;
+	border-color: #FF4847;
 }
 
 .search__groups__item.viva {
-	background-color: #CAB2D6;
-	margin-right: 5px;
+	border-color: #CAB2D6;
 }
 
 .search__groups__item.ci-cci {
-	background-color: #6A3D9A;
-	margin-right: 5px;
+	border-color: #6A3D9A;
 }
 
 .search__groups__item.ali {
-	background-color: #A6CEE3;
-	margin-right: 5px;
+	border-color: #A6CEE3;
 }
 
 .search__groups__item.coppul {
-	background-color: #33A02C;
-	margin-right: 5px;
+	border-color: #33A02C;
 }
 
 .search__groups__item.tug {
-	background-color: #FF7F00;
-	margin-right: 5px;
+	border-color: #FF7F00;
 }
 
 .search__groups__item.scelc {
-	background-color: #036564;
-	margin-right: 5px;
+	border-color: #036564;
 }
 
 .search__groups__item.mms {
-	background-color: #666666;
-	margin-right: 5px;
+	border-color: #666666;
 }
 /* End Search Result Groups */
 
