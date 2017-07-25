@@ -3,7 +3,7 @@ function searchSolrTitles() {
     var rawUserInput = document.getElementById("searchInput").value;
     var row = "";
     var groupID = this.valueOf();
-    $.getJSON("http://shared-print.scs.argenticsoftware.com/search/?q=" + rawUserInput + "&return=_all_fields", function(result) {
+    $.getJSON("https://shared-print.scs.argenticsoftware.com/search/?q=" + rawUserInput + "&return=_all_fields", function(result) {
     $("#solr_results").html("");
     for (var holding_index in result.hits.hit) {
         var holding = result.hits.hit[holding_index].fields;
