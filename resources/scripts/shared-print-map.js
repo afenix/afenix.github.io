@@ -199,8 +199,8 @@ function addGroupFunctionality(map, browser) {
     var groupTwitter = document.getElementById('group-twitter');
 
     // Add the Overview title and description on page load
-    groupName.textContent = libraries[0].title;
-    groupDescription.textContent = libraries[0].description;
+    groupName.innerHTML = libraries[0].title;
+    groupDescription.innerHTML = libraries[0].description;
 
     var groupInfo = [{
             "group_name": "Overview",
@@ -306,8 +306,8 @@ function addGroupFunctionality(map, browser) {
             $('.group-div').removeClass('selected');
             $(this).addClass('selected');     
             
-            groupName.textContent = libraries[key].title;
-            groupDescription.textContent = libraries[key].description;
+            groupName.innerHTML = libraries[key].title;
+            groupDescription.innerHTML = libraries[key].description;
             $('#group-website').attr("href", libraries[key].website);
            
             if (libraries[key].hasOwnProperty('twitter')) {
@@ -338,7 +338,7 @@ function addGroupFunctionality(map, browser) {
 var libraries = [{
         "id": "12",
         "title": "Shared Print Overview",
-        "description": "Models and retention criteria vary according to local and regional priorities, but most of the committed holdings are secured under formal Memoranda of Understanding (MOU) for fifteen years, often with review every five years. Although current programs are designed to address local needs, they can be seen as building blocks, or nodes in a growing network. They will contribute significantly to a federated national or international solution, such as that envisioned by the MLA’s Working Group on the Future of the Print Record (https://printrecord.mla.hcommons.org).",
+        "description": "Models and retention criteria vary according to local and regional priorities, but most of the committed holdings are secured under formal Memoranda of Understanding (MOU) for fifteen years, often with review every five years. Although current programs are designed to address local needs, they can be seen as building blocks, or nodes in a growing network. They will contribute significantly to a federated national or international solution, such as that envisioned by the <a href=\"https://printrecord.mla.hcommons.org\" target=\"_blank\" rel=\"noopener noreferrer\">MLA’s Working Group on the Future of the Print Record</a>.",
         "members": [],
         "camera": {
             center: [-100.722656, 42.793385],
