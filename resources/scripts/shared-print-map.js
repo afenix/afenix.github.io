@@ -23,9 +23,18 @@ function initJS() {
     map.gridControl.options.follow = true;
     map.zoomControl.setPosition('topright');
     addGroupFunctionality(map, 'nonWebGL');
-    if (map.tap) map.tap.disable();
-    if (map.tap) map.dragging.disable();
-}
+
+    map.dragging.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    if (map.tap) {
+console.log("you done map.tapped!");console.log(map.tap);
+        map.tap.disable();
+    }
+    if (map.tap) {
+console.log("you done map.tapped! Now you need to not drag");
+        map.dragging.disable();
+    }
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
     /**
@@ -105,6 +114,13 @@ function initGL() {
         });
     }
 
+    // Code credit goes to https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+    // TODO: Determine if worth bringing in a 3rd party solution : Modernizr
+    function is_touch_device() {
+      return 'ontouchstart' in window        // works on most browsers 
+          || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+    };
+    
     // Add and style vector tiles from mapbox of shared collection data
      map.on('load', function () {
          map.addLayer({
@@ -154,6 +170,12 @@ function initGL() {
 
     // disable map scrolling (i.e. zoom in/out on scroll)
     map.scrollZoom.disable();
+
+    if (is_touch_device()) {
+console.log("you can't touch this! Doh doh doh doh... and therefore should not be able to drag this here map!");
+        map.dragRotate.disable();
+    }
+
 
     // Create a popup object, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
