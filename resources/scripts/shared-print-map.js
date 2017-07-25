@@ -205,7 +205,7 @@ function addGroupFunctionality(map, browser) {
     var groupInfo = [{
             "group_name": "Overview",
             "group_color": "#666666",
-            "group_count": "19.7M Holdings"
+            "group_count": "7.6M Titles"
         },
         {
             "group_name": "SCELC",
