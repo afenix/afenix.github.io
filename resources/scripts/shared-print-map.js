@@ -174,7 +174,7 @@ function initGL() {
 
     if (is_touch_device()) {
 console.log("you can't touch this! Doh doh doh doh... and therefore should not be able to drag this here map!");
-        map.dragRotate.disable();
+        map.dragPan.disable();
     }
 
 
