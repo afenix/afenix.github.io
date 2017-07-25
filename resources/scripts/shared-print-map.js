@@ -1,5 +1,6 @@
 var myAccessToken = "pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ";
 
+// Determine if browser supports WebGL 
 if(!mapboxgl.supported()) {
     var JsUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
         cssUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css';
@@ -11,7 +12,6 @@ if(!mapboxgl.supported()) {
         cssUrl = 'https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css';
 
     loadScript(JsUrl, cssUrl, initGL);
-
 }
 
 function initJS() {
@@ -23,16 +23,11 @@ function initJS() {
     map.gridControl.options.follow = true;
     map.zoomControl.setPosition('topright');
     addGroupFunctionality(map, 'nonWebGL');
-
     map.dragging.disable();
     map.touchZoom.disable();
     map.doubleClickZoom.disable();
     if (map.tap) {
-console.log("you done map.tapped!");console.log(map.tap);
         map.tap.disable();
-    }
-    if (map.tap) {
-console.log("you done map.tapped! Now you need to not drag");
         map.dragging.disable();
     }
 }
@@ -40,7 +35,6 @@ console.log("you done map.tapped! Now you need to not drag");
 function loadScript(sScriptSrc, cssSrc, oCallback) {
     /**
      * adapted from - http://stackoverflow.com/questions/11160948/how-to-know-if-jquery-has-finished-loading/11161045#11161045.1
-     *
      */
     var oHead = document.getElementsByTagName('head')[0];
     var oScript = document.createElement('script');
@@ -76,17 +70,20 @@ function loadScript(sScriptSrc, cssSrc, oCallback) {
 function initGL() {
     mapboxgl.accessToken = myAccessToken;
     var map = new mapboxgl.Map({
-    		container: 'map',
-    		style: 'mapbox://styles/mapbox/light-v9', //hosted style id
-    	   	center: [-91.230469, 34.510218], // starting position
-    	    minzoom: 3,
-    	    maxzoom: 10,
-    	    zoom: 1.75, //staring zoom
-            bearing: 5,
-            pitch: 45
-    	});
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v9', //hosted style id
+                center: [-91.230469, 34.510218], // starting position
+                minzoom: 3,
+                maxzoom: 10,
+                bearing: 5,
+                pitch: 45
+            });
+    if ($(window).width() > 960) {
+        map.setZoom(1.75);
+    } else {
+        map.setZoom(1.2);
+    }
 
-    
     $(document).on('scroll.stopEvent', function() {
        var hT = $('.map').offset().top,
            hH = $('.map').outerHeight(),
@@ -99,20 +96,37 @@ function initGL() {
     });
 
     function playback(index) {
-        // Animate the map position based on camera properties
-        map.flyTo({
-            center: [-100.722656, 42.793385],
-            zoom: 3,
-            bearing: 0,
-            pitch: 0,
-            speed: 0.5, // make the flying slow
-            curve: 1, // change the speed at which it zooms out
-            // This can be any easing function: it takes a number between
-            // 0 and 1 and returns another number between 0 and 1.
-            easing: function (t) {
-                return t;
-            }
-        });
+        if ($(window).width() < 960) {
+            // Animate the map position based on camera properties
+            map.flyTo({
+                center: [-97, 42.793385],
+                zoom: 1.8,
+                bearing: 0,
+                pitch: 0,
+                speed: 0.5, // make the flying slow
+                curve: 1, // change the speed at which it zooms out
+                // This can be any easing function: it takes a number between
+                // 0 and 1 and returns another number between 0 and 1.
+                easing: function (t) {
+                    return t;
+                }
+            });
+        } else {
+            // Animate the map position based on camera properties
+            map.flyTo({
+                center: [-100.722656, 42.793385],
+                zoom: 3,
+                bearing: 0,
+                pitch: 0,
+                speed: 0.5, // make the flying slow
+                curve: 1, // change the speed at which it zooms out
+                // This can be any easing function: it takes a number between
+                // 0 and 1 and returns another number between 0 and 1.
+                easing: function (t) {
+                    return t;
+                }
+            });
+        }
     }
 
     // Code credit goes to https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
@@ -122,8 +136,29 @@ function initGL() {
           || navigator.maxTouchPoints;       // works on IE10/11 and Surface
     }
 
+    // var eventFired = 0;
+
+    // if ($(window).width() < 960) {
+    //     console.log('Less than 960');
+    // }
+    // else {
+    //     console.log('More than 960');
+    //     eventFired = 1;
+    // }
+
+    // $(window).on('resize', function() {
+    //     if (!eventFired) {
+    //         if ($(window).width() < 960) {
+    //             console.log('Less than 960 resize');
+    //         } else {
+    //             console.log('More than 960 resize');
+    //         }
+    //     }
+    // });
+
     // Add and style vector tiles from mapbox of shared collection data
      map.on('load', function () {
+        var windowWidth = $(window).width();
          map.addLayer({
             'id': 'shared_collection',
             'type': 'circle',
@@ -135,9 +170,9 @@ function initGL() {
             'source-layer': 'Shared_Print_Retentions_by_Li-c5s569', //name of tileset
             'paint' : {
                 'circle-radius' : {
-                	property: 'total_count_num',
-    	            type: 'interval',
-    	            stops: [ 
+                    property: 'total_count_num',
+                    type: 'interval',
+                    stops: [ 
                         [20000, 5],
                         [100000, 7.5],
                         [200000, 10],
@@ -163,7 +198,7 @@ function initGL() {
                 },
                 'circle-opacity' : 0.55
               },
-        }); addGroupFunctionality(map, 'webGL');
+        }); addGroupFunctionality(map, 'webGL', windowWidth);
     });
 
     // add nav features to the map
@@ -171,12 +206,9 @@ function initGL() {
 
     // disable map scrolling (i.e. zoom in/out on scroll)
     map.scrollZoom.disable();
-
     if (is_touch_device()) {
-console.log("you can't touch this! Doh doh doh doh... and therefore should not be able to drag this here map!");
         map.dragPan.disable();
     }
-
 
     // Create a popup object, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
@@ -194,14 +226,14 @@ console.log("you can't touch this! Doh doh doh doh... and therefore should not b
         if (!features.length) {
             return;
         }
-        var feature = features[0];			        
+        var feature = features[0];                  
         // Populate the popup and set its coordinates
         // based on the feature found.
         popup.setLngLat(feature.geometry.coordinates)
              .setHTML('<div id="popup" class="popup"> <h2 class="popup-group-title"> ' + feature.properties.group + ' Group</h2><h3 class="popup-library-title"><strong>' + feature.properties.inst_name + '</strong></h3>' +
-    	              '<ul>' +
-    	              '<li class="popup-list"> Total titles retained: ' + feature.properties.total_count_string + ' </li>' +
-    	              '<li class="popup-list"> Total titles uniquely retained: ' + feature.properties.unique_count_string + " </li></ul> </div>")
+                      '<ul>' +
+                      '<li class="popup-list"> Total titles retained: ' + feature.properties.total_count_string + ' </li>' +
+                      '<li class="popup-list"> Total titles uniquely retained: ' + feature.properties.unique_count_string + " </li></ul> </div>")
             .addTo(map);
     });
 
@@ -212,7 +244,7 @@ console.log("you can't touch this! Doh doh doh doh... and therefore should not b
 }
 
 
-function addGroupFunctionality(map, browser) {
+function addGroupFunctionality(map, browser, windowWidth) {
     // Add group legend buttons, group name, description, participating members and links   
     var groupLegendElements = document.getElementById('group-legend-elements');
     var groupName = document.getElementById('group-name');
@@ -320,8 +352,10 @@ function addGroupFunctionality(map, browser) {
                 $('.member-list').remove();
             }
 
-            if (browser == 'webGL') {
+            if (browser == 'webGL' && windowWidth > 960) {
                 map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
+            } else if (browser == 'webGL' && windowWidth < 960) {
+                map.flyTo(libraries[key].cameraMobile); // pan/zoom map to the appropriate group
             } else {
                 map.setView(libraries[key].latLongJS, libraries[key].zoomJS, {animate: true, duration: 10, easeLinearity: 10});
             }
@@ -369,6 +403,12 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-97, 42.8],
+            zoom: 1.8,
+            bearing: 0,
+            pitch: 0
+        },
         "latLongJS": [42.793385,-100.722656],
         "zoomJS": 4
       },{
@@ -380,6 +420,12 @@ var libraries = [{
         "twitter": "https://twitter.com/scelc",
         "website": "https://scelc.org/",
         "camera": {
+            center: [-119.597168, 35.830618],
+            zoom: 4.8,
+            bearing: 0,
+            pitch: 0
+        },
+        "cameraMobile": {
             center: [-119.597168, 35.830618],
             zoom: 4.8,
             bearing: 0,
@@ -400,6 +446,12 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-110.039063, 49.999795],
+            zoom: 3,
+            bearing: 0,
+            pitch: 10
+        },
         "latLongJS": [49.999795, -110.0390638],
         "zoomJS": 5
      }, {
@@ -411,6 +463,12 @@ var libraries = [{
         "camera": {
             center: [-93.144836, 41.553233],
             zoom: 7.6,
+            bearing: 0,
+            pitch: 0
+        },
+        "cameraMobile": {
+            center: [-93.144836, 41.553233],
+            zoom: 7.2,
             bearing: 0,
             pitch: 0
         },
@@ -432,6 +490,12 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-86.149292, 39.769360],
+            zoom: 5.2,
+            bearing: 0,
+            pitch: 0
+        },
         "latLongJS": [39.769360, -85],
         "zoomJS": 6
     }, {
@@ -442,6 +506,12 @@ var libraries = [{
                     "Oakland University","Saginaw Valley","Wayne State University","Western Michigan University"],
         "website": "https://www.mcls.org/engagement/mi-spi/",
         "camera": {
+            center: [-85.253906, 44.570415],
+            zoom: 4.8,
+            bearing: 0,
+            pitch: 0
+        },
+        "cameraMobile": {
             center: [-85.253906, 44.570415],
             zoom: 4.8,
             bearing: 0,
@@ -461,6 +531,12 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-80.362244, 43.488237],
+            zoom: 8.5,
+            bearing: 0,
+            pitch: 0
+        },
         "latLongJS": [43.488237, -80.362244],
         "zoomJS": 10
     }, {
@@ -472,6 +548,12 @@ var libraries = [{
         "camera": {
             center: [-78.002930, 37.785639],
             zoom: 5.8,
+            bearing: 0,
+            pitch: 0
+        },
+        "cameraMobile": {
+            center: [-78.5, 37.785639],
+            zoom: 5.5,
             bearing: 0,
             pitch: 0
         },
@@ -490,9 +572,15 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-77.053986, 38.932407],
+            zoom: 10,
+            bearing: 0,
+            pitch: 0
+        },
         "latLongJS": [38.932407, -77.053986],
         "zoomJS": 11
-        }, {
+    }, {
         "id": "3",
         "title": "CNY",
         "description": "ConnectNY (CNY) is a consortium of 12 independent academic institutions in New York State. The mission of ConnectNY is to share collections, leverage resources, and enhance services through cooperative initiatives and coordinated activities. Due to their ongoing efforts for collaborative retention the CNY project has been able to retain a shared print collection of 852,205 thousand title-holdings, with 1,183 thousand of those titles being uniquely retained by this group. ",
@@ -502,6 +590,12 @@ var libraries = [{
         "camera": {
             center: [-75.498047, 42.613244],
             zoom: 5.2,
+            bearing: 0,
+            pitch: 0
+        },
+         "cameraMobile": {
+            center: [-76.498047, 42.613244],
+            zoom: 5,
             bearing: 0,
             pitch: 0
         },
@@ -522,6 +616,12 @@ var libraries = [{
             bearing: 0,
             pitch: 0
         },
+        "cameraMobile": {
+            center: [-73.872070, 41.569738],
+            zoom: 4.8,
+            bearing: 0,
+            pitch: 0
+        },
         "latLongJS": [41.569738, -73],
         "zoomJS": 6
     }, {
@@ -534,6 +634,12 @@ var libraries = [{
         "camera": {
             center: [-69.433594, 44.368778],
             zoom: 6,
+            bearing: 0,
+            pitch: 0
+        },
+        "cameraMobile": {
+            center: [-69.433594, 44.3],
+            zoom: 6.5,
             bearing: 0,
             pitch: 0
         },
