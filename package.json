@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "concurrently -k \"npm run devServer\" \"npm run postCssWatch -s\"",
-    "lintJS": "echo '=> linting' && jshint resources/scripts/*.js",
+    "lintAllJS": "echo '=> linting' && jshint resources/scripts/*.js",
+    "lintMapJS": "echo '=> linting' && jshint resources/scripts/shared-print-map.js",
     "minifyMapJS": "echo '=> compressing shared-print-map.js' && uglifyjs resources/scripts/shared-print-map.js --output resources/scripts/shared-print-map.min.js -s",
     "minifySearchJS": "echo '=> compressing shared-print-search.js' && uglifyjs resources/scripts/shared-print-search.js --output resources/scripts/shared-print-search.min.js -s",
     "postCssWatch": "echo '=> postcss is now watching for changes to resources/styles/source/mapStyle_next.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css --watch",

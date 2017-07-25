@@ -35,6 +35,7 @@ console.log("you done map.tapped!");console.log(map.tap);
 console.log("you done map.tapped! Now you need to not drag");
         map.dragging.disable();
     }
+}
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
     /**
@@ -119,8 +120,8 @@ function initGL() {
     function is_touch_device() {
       return 'ontouchstart' in window        // works on most browsers 
           || navigator.maxTouchPoints;       // works on IE10/11 and Surface
-    };
-    
+    }
+
     // Add and style vector tiles from mapbox of shared collection data
      map.on('load', function () {
          map.addLayer({
