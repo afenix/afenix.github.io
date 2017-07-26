@@ -11,14 +11,14 @@
 
 :root {
 
---green: 	44,150,62; /* rgb(44,150,62); #2C963E; */
---blue: 		0,141,207; /* rgb(0,141,207); #008DCF; */
---purple: 96,72,148; /* rgb(96,72,148); 	#604894 */
---pink: 		188,14,131; /* rgb(188,14,131); #BC0E83; */
---orange: 	245,127,41; /* rgb(245,127,41); #F57F29; */
---text:		27,42,57; /* rgb(27,42,57);	 #1B2A39; */
---light:		255,255,255; /* rgb(255,255,255); #ffffff; */
---dark:		0,0,0; /* rgb(0,0,0); #000000; */ /* Gray() function used when opacities would otherwise be used for lighter shades of dark http://dev.w3.org/csswg/css-color/#grays */
+--green:  44,150,62; /* rgb(44,150,62); #2C963E; */
+--blue:     0,141,207; /* rgb(0,141,207); #008DCF; */
+--purple: 96,72,148; /* rgb(96,72,148);   #604894 */
+--pink:     188,14,131; /* rgb(188,14,131); #BC0E83; */
+--orange:   245,127,41; /* rgb(245,127,41); #F57F29; */
+--text:   27,42,57; /* rgb(27,42,57);  #1B2A39; */
+--light:    255,255,255; /* rgb(255,255,255); #ffffff; */
+--dark:   0,0,0; /* rgb(0,0,0); #000000; */ /* Gray() function used when opacities would otherwise be used for lighter shades of dark http://dev.w3.org/csswg/css-color/#grays */
 --twitter: #1DA1F2;
 }
  
@@ -31,10 +31,10 @@
 }
 
 /*
-	Typographic sizes
-	
-	Font sizes based on major third (1.25) http://www.modularscale.com/?1&em&1.25
-	Font weights include 100, 200, 300, 400, 500, 600, 700
+  Typographic sizes
+  
+  Font sizes based on major third (1.25) http://www.modularscale.com/?1&em&1.25
+  Font weights include 100, 200, 300, 400, 500, 600, 700
 
 */
 
@@ -42,27 +42,28 @@
 
 --base-majorly-minor: .75rem;
 --base-minor: .875rem;
---base: 		1rem;
---alpha:		4.768rem; /* largest */
---alpha-minor:		4rem;
---beta:		3.052rem;
---beta-minor:		2.5rem;
---gamma:		1.953rem;
---delta:		1.25rem;
---epsilon:	.8rem;
---zeta:		.64rem; /* more for special instance reference than actual use! */
---eta:		.41rem; /* more for special instance reference than actual use! */
---theta:		.328rem; /* more for special instance reference than actual use! */
+--base:     1rem;
+--alpha:    4.768rem; /* largest */
+--alpha-minor:    4rem;
+--beta:   3.052rem;
+--beta-minor:   2.5rem;
+--gamma:    1.953rem;
+--delta:    1.25rem;
+--epsilon:  .8rem;
+--zeta:   .64rem; /* more for special instance reference than actual use! */
+--eta:    .41rem; /* more for special instance reference than actual use! */
+--theta:    .328rem; /* more for special instance reference than actual use! */
 
 }
 
 /*
-	Breakpoints
+  Breakpoints
 
 */
 
 @custom-media --bp-tiny (min-width: 23.4375rem);
 @custom-media --bp-small (min-width: 30rem);
+@custom-media --bp-sm-med (min-width: 37.5rem);
 @custom-media --bp-medium (min-width: 57rem);
 @custom-media --bp-large (min-width: 64rem);
 @custom-media --bp-room-to-view (min-width: 37.5rem) and (min-height: 40rem);
@@ -87,31 +88,31 @@ body {
 /* Generic Layout Blocks */
 
 .container {
-	width: 100%;
-	margin: 2rem auto;
-	box-sizing: border-box;
-	@media (--bp-medium) {
-	  margin: 3rem auto;
-	}
-	@media (--bp-large) {
-	  margin: 6rem auto;
-	}
+  width: 100%;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  @media (--bp-medium) {
+    margin: 3rem auto;
+  }
+  @media (--bp-large) {
+    margin: 6rem auto;
+  }
 }
 
 .container:after {
   content: "";
   display: table;
-  clear: both;	
+  clear: both;  
 }
 
 .container--measure {
-	padding: 0 1.5rem;
-	max-width: 57rem;
-	margin-left: auto;
-	margin-right: auto;
-	@media (--bp-small) {
-	  padding: 0 2rem;
-	}
+  padding: 0 1.5rem;
+  max-width: 57rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media (--bp-small) {
+    padding: 0 2rem;
+  }
 }
 
 
@@ -122,96 +123,96 @@ body {
  *---------------------------------------------------------------------------*/
  
 html {
-	font-size: 100%;
-	font-family: var(--font-family);
-	text-rendering: optimizelegibility; /* Can cause problems in some versions of Android */
-  	-moz-osx-font-smoothing: grayscale;
-  	-webkit-font-smoothing: antialiased;
+  font-size: 100%;
+  font-family: var(--font-family);
+  text-rendering: optimizelegibility; /* Can cause problems in some versions of Android */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-	line-height: 1.5;
-	background: rgba(var(--light), 1);
-	color: rgba(var(--text), 1);
+  line-height: 1.5;
+  background: rgba(var(--light), 1);
+  color: rgba(var(--text), 1);
 }
 
 h1, h2, h3, h4, h5 {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 .h1 {
-	color: rgba(var(--green), 1);
-	font-weight: 200;
-	font-size: var(--beta-minor);
-	letter-spacing: -.03em;
-	line-height: 1.1;
-	margin: 0 0 1em;
-	@media (--bp-small) {
-	  font-size: var(--alpha-minor);
-    	font-weight: 100;
-	}
-	@media (--bp-medium) {
-	  font-size: var(--alpha);
-	}
+  color: rgba(var(--green), 1);
+  font-weight: 200;
+  font-size: var(--beta-minor);
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  margin: 0 0 1em;
+  @media (--bp-small) {
+    font-size: var(--alpha-minor);
+      font-weight: 100;
+  }
+  @media (--bp-medium) {
+    font-size: var(--alpha);
+  }
 }
 
 .h1__subhead {
-	color: rgba(var(--green), 1);
-	font-size: .5em;
-	font-weight: 400;
-	display: block;
-	margin: 1.5rem 0 0;
-	letter-spacing: -.01em;
-	max-width: 55rem;
-	line-height: 1.3;
-	@media (--bp-small) {
-	  font-size: .4em;
-	}
-	@media (--bp-medium) {
-	  font-size: .328em;
-	}
+  color: rgba(var(--green), 1);
+  font-size: .5em;
+  font-weight: 400;
+  display: block;
+  margin: 1.5rem 0 0;
+  letter-spacing: -.01em;
+  max-width: 55rem;
+  line-height: 1.3;
+  @media (--bp-small) {
+    font-size: .4em;
+  }
+  @media (--bp-medium) {
+    font-size: .328em;
+  }
 }
 
 .h2 {
-	color: gray(30%);
-	font-weight: 200;
-	font-size: var(--beta);
-	line-height: 1.1;
-	margin: 0 0 1em;
+  color: gray(30%);
+  font-weight: 200;
+  font-size: var(--beta);
+  line-height: 1.1;
+  margin: 0 0 1em;
 }
 
 .h3 {
-	color: gray(30%);
-	font-weight: 200;
-	font-size: var(--gamma);
-	line-height: 1.1;
-	margin: 0 0 1em;
+  color: gray(30%);
+  font-weight: 200;
+  font-size: var(--gamma);
+  line-height: 1.1;
+  margin: 0 0 1em;
 }
 
 .h4 {
-	color: gray(30%);
-	font-weight: 600;
-	font-size: var(--delta);
-	line-height: 1.1;
-	margin: 0 0 1em;
+  color: gray(30%);
+  font-weight: 600;
+  font-size: var(--delta);
+  line-height: 1.1;
+  margin: 0 0 1em;
 }
 
 .h5 {
-	color: gray(30%);
-	font-size: var(--base);
-	text-transform: uppercase;
-	letter-spacing: .02em;
-	font-weight: 700;
-	line-height: 1.1;
-	margin: 0 0 1em;
+  color: gray(30%);
+  font-size: var(--base);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1em;
 }
 
 .intro-text-container {
-	font-size: var(--delta);
-	margin: 2em auto;
-	@media (--bp-medium) {
-	  margin: 5rem auto;
-	}
+  font-size: var(--delta);
+  margin: 2em auto;
+  @media (--bp-medium) {
+    margin: 5rem auto;
+  }
 }
 
 #gl-status-message {
@@ -230,40 +231,40 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-	margin-top:1.5em; /* Equal to line height */
-	margin-bottom:1.5em; /* Equal to line height */
+  margin-top:1.5em; /* Equal to line height */
+  margin-bottom:1.5em; /* Equal to line height */
 }
 
 p:first-child {
-	margin-top:0;
+  margin-top:0;
 }
 
 p:last-child {
-	margin-bottom:0;
+  margin-bottom:0;
 }
 
 strong {
-	font-weight: 700;
-	color: gray(30%);
+  font-weight: 700;
+  color: gray(30%);
 }
 
 em {
-	font-style: italic;
+  font-style: italic;
 }
 
 ul, li {
-	list-style: none;
-	padding:0;
-	margin: 0;
+  list-style: none;
+  padding:0;
+  margin: 0;
 }
 
 a {
-	color: rgba(var(--green), 1);
+  color: rgba(var(--green), 1);
 }
 
 .smallcaps {
-	text-transform: uppercase;
-	letter-spacing: .02em;
+  text-transform: uppercase;
+  letter-spacing: .02em;
 }
  
  /*----------------------------------------------------------------------------
@@ -273,8 +274,8 @@ a {
  *---------------------------------------------------------------------------*/
  
  .button {
-	border: none;
-	-webkit-appearance: none;
+  border: none;
+  -webkit-appearance: none;
  }
  
  /*----------------------------------------------------------------------------
@@ -284,42 +285,42 @@ a {
  *---------------------------------------------------------------------------*/
 
 .header-brand {
-	padding: 1rem 1.5rem;
-	@media (--bp-small) {
-	  padding: 1rem 2rem;
-	}
+  padding: 1rem 1.5rem;
+  @media (--bp-small) {
+    padding: 1rem 2rem;
+  }
 }
 
 .header-brand__logo {
-	width: 35%;
-	min-width: 100px;
-	max-width: 150px;
-	height: auto;
-	display: block;
+  width: 35%;
+  min-width: 100px;
+  max-width: 150px;
+  height: auto;
+  display: block;
 }
 
 .main__header {
-	text-align:center;
-	padding: 3rem 1.5rem 3.125rem;
-	background: gray(95%);
-	background-image: url('../images/background-2.jpg');
-	border: 1px solid rgba(var(--green), .25);
-	border-width: 1px 0;
-	@media (--bp-tiny) {
-	  padding: 6rem 2rem 6.125rem;
-	}
-	@media (--bp-small) {
-	  padding: 6rem 2rem 6.125rem;
-	}
-	@media (--bp-medium) {
-	  padding: 9rem 9rem 9.125rem;
-	}
+  text-align:center;
+  padding: 3rem 1.5rem 3.125rem;
+  background: gray(95%);
+  background-image: url('../images/background-2.jpg');
+  border: 1px solid rgba(var(--green), .25);
+  border-width: 1px 0;
+  @media (--bp-tiny) {
+    padding: 6rem 2rem 6.125rem;
+  }
+  @media (--bp-small) {
+    padding: 6rem 2rem 6.125rem;
+  }
+  @media (--bp-medium) {
+    padding: 9rem 9rem 9.125rem;
+  }
 }
 
 .main__header__title {
   width: 100%;
-	max-width: 55rem;
-	margin: auto;
+  max-width: 55rem;
+  margin: auto;
 }
  
  /*----------------------------------------------------------------------------
@@ -328,8 +329,13 @@ a {
  *
  *---------------------------------------------------------------------------*/
  
-.map {
-	position: relative;
+.container.map {
+  border-top: 7.25rem solid #fff;
+  margin-bottom:0;
+  position: relative;
+  @media (--bp-sm-med) {
+      border: none;
+  }
 }
 
 /*
@@ -344,52 +350,54 @@ a {
     width: 100%;
     position: relative;
     height: 350px;
-    border-top: 7rem solid #fff;
-    	@media (--bp-room-to-view) {
-      	border-top: none;
-    	}
 }
 
 /* Begin Titles Legend */
 
 .map__legend {
-	position: absolute;
-	background-color: #fff;
-	border-radius: 3px;
-	top: 0;
-	left: 50%;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px rgba(var(--dark), 15%);
+  padding: .75rem .75rem 0;
+  top: -7.25rem;
+  left: 50%;
   transform: translateX(-50%);
-	width: 260px;
-	box-shadow: 1px 1px 4px rgba(var(--dark), 15%);
-	font-size: var(--base-majorly-minor);
-	padding: .75rem .75rem 0;
-	z-index: 1;
-	text-align: left;
-	overflow: hidden;
-	opacity: 0.9;
-	@media (--bp-room-to-view) {
-    	width: auto;
-	  background-color: #fff;
-    	font-size: var(--base-majorly-minor);
-    	top: 2rem;
-    	left: 2rem;
-    	transform: translateX(0);
-    	right: auto;
-    	box-shadow: 0 1px 2px rgba(var(--dark), 10%);
-	}
+  width: 260px;
+  font-size: var(--base-majorly-minor);
+  z-index: 1;
+  text-align: left;
+  overflow: hidden;
+  opacity: 0.9;
+  @media (--bp-sm-med) {
+      width: auto;
+    background-color: #fff;
+      font-size: var(--base-majorly-minor);
+      top: 2rem;
+      left: 2rem;
+      transform: translateX(0);
+      right: auto;
+      box-shadow: 0 1px 2px rgba(var(--dark), 10%);
+      padding: .75rem .75rem .25rem;
+  }
 }
 
 .map__legend__header {
-	font-size: var(--epsilon);
-	margin: 0 0 .5em;
+  font-size: var(--epsilon);
+  text-align: center;
+  margin: 0 0 .75rem;
+  line-height: 1rem;
+  @media (--bp-sm-med) {
+      text-align: left;
+    }
 }
 
 .circle-list { 
-	display: flex;
-	justify-content: space-around;
-	@media (--bp-room-to-view) {
-  	  display: block;
-  	}
+  display: flex;
+  justify-content: space-around;
+  @media (--bp-sm-med) {
+      display: block;
+    }
 }
 
 .circle {
@@ -404,16 +412,16 @@ a {
   vertical-align: bottom;
   padding-top: 2rem;
   width: calc(2.25rem + 5px);
-	@media (--bp-room-to-view) {
-    text-align: right;
-    	width: auto;
-  	  padding-top: 0;
+  @media (--bp-sm-med) {
+    text-align: left;
+      width: auto;
+      padding-top: 0;
     padding-left: 2rem;
-  	  display: block;
+      display: block;
     line-height: calc(1.5rem + 5px);
     height: calc(1.5rem + 5px);
     vertical-align: inherit;
-	}
+  }
 }
 
 .circle::before {
@@ -426,20 +434,20 @@ a {
   content: " ";
   border-radius: 50%;
   background-color: #666666;
-	@media (--bp-room-to-view) {
+  @media (--bp-sm-med) {
     transform: translateX(-50%) translateY(-50%);
     left: .5625rem;
     top: 50%;
-  	}
+    }
 }
 
 .circle--circle1 {
   width: calc(2.25rem + 5px);
-	@media (--bp-room-to-view) { 
+  @media (--bp-sm-med) { 
     width: auto; 
     line-height: calc(1rem + 5px);
     height: calc(1rem + 5px);
-	}
+  }
 }
 
 .circle--circle1::before {
@@ -449,11 +457,11 @@ a {
 
 .circle--circle2 {
   width: calc(2.25rem + 7px);
-	@media (--bp-room-to-view) { 
+  @media (--bp-sm-med) { 
     width: auto; 
     line-height: calc(1rem + 7px);
     height: calc(1rem + 7px);
-	}
+  }
 }
 
 .circle--circle2::before {
@@ -463,11 +471,11 @@ a {
 
 .circle--circle3 { 
   width: calc(2.25rem + 10px);
-	@media (--bp-room-to-view) { 
+  @media (--bp-sm-med) { 
     width: auto;
     line-height: calc(1rem + 10px);
     height: calc(1rem + 10px);
-	}
+  }
 }
 
 .circle--circle3::before {
@@ -477,11 +485,11 @@ a {
 
 .circle--circle4 { 
   width: calc(2.25rem + 13px);
-	@media (--bp-room-to-view) { 
+  @media (--bp-sm-med) { 
     width: auto; 
     line-height: calc(1rem + 13px);
     height: calc(1rem + 13px);
-	}  
+  }  
 }
 
 .circle--circle4::before {
@@ -491,7 +499,8 @@ a {
 
 .circle--circle5 { 
   width: calc(2.25rem + 25px);
-	@media (--bp-room-to-view) { 
+  
+  @media (--bp-sm-med) { 
     width: auto; 
     line-height: calc(1rem + 25px);
     height: calc(1rem + 25px);
@@ -511,65 +520,71 @@ a {
  *
  *---------------------------------------------------------------------------*/
  
-.container.map {
-  margin-bottom:0;
-}
- 
 .container.container--measure.groups {
-    margin-top:0;
+  margin-top:0;
 }
-
 
 /* Begin Group Legend */
 
 .group-legend {
-	margin: 0 -1.5rem 2rem;
-	padding:0;
-	border: none;
-	@media (--bp-small) {
-	  margin: 0 -2rem 2rem;
-	}
+  margin: 0 -1.5rem 2rem;
+  padding:0;
+  border: none;
+  @media (--bp-small) {
+    margin: 0 -2rem 2rem;
+  }
 }
 
 .group-legend__hint {
-	font-weight: 500;
-	padding: .75rem .5rem;
-	margin: 0 auto;
-	text-align: center;
-	background: gray(85%);
+  font-weight: 500;
+  padding: .75rem .5rem;
+  margin: 0 auto;
+  text-align: center;
+  background: gray(85%);
   font-size: var(--base-majorly-minor);
   line-height: 1.25;
-	@media (--bp-room-to-view) {
-    	padding: 1rem;
-  	  font-size: var(--base);
-	  margin-bottom: 2rem;
-	}
-	@media (--bp-medium) {
-  	  margin-left: calc(-50vw + 50%);
-  	  margin-right: calc(-50vw + 50%);
-	}
+  @media (--bp-room-to-view) {
+      padding: 1rem;
+      font-size: var(--base);
+    margin-bottom: 2rem;
+  }
+  @media (--bp-medium) {
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+  }
 }
 
 .group-legend__intro {
-	font-size: var(--delta);
+  font-size: var(--delta);
 }
 
 #group-legend-elements {
-  	padding: .25rem;
-	@media (--bp-medium) {
-  	  margin-left: calc(-50vw + 50%);
-  	  margin-right: calc(-50vw + 50%);
-  	  margin-bottom: 2rem;
-	}
-	@media (--bp-large) {
-	  margin-bottom: 4rem;
-	}
-	@media (--bp-room-to-view) {
-    	display: flex;
-    	flex-wrap: wrap;
-    	padding: 0 2rem;
-    	margin: 0 -.5rem 0;
-	}
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px rgba(var(--dark), 15%);
+    padding: .6875rem .75rem;
+    margin: 1rem;
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  @media (--bp-medium) {
+      margin-top: 0;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-bottom: 2rem;
+  }
+  @media (--bp-large) {
+    margin-bottom: 4rem;
+  }
+  @media (--bp-room-to-view) {
+      background-color: none;
+      box-shadow: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      margin: 0 -.5rem 0;
+  }
 }
 
 /* End Group Legend */
@@ -577,54 +592,55 @@ a {
 /* Begin Group/Map Controls */
 
 .group-div { /* See specific colors for various groups below */
-	cursor: pointer;
-	padding: .0625rem 0 .0625rem 1.25rem;
+  cursor: pointer;
+  padding: .0625rem 0 0 1.25rem;
   background-color: #ffffff;
-	display:inline-block;
-	min-width: 4rem;
-	position: relative;
-	/* color: rgba(var(--light), 1); */
-	text-align: left;
-	font-weight: 500;
-	white-space: nowrap;
+  display:inline-block;
+    flex: 1 0 3.35rem;
+  min-width: 3.35rem;
+  position: relative;
+  /* color: rgba(var(--light), 1); */
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
   line-height: var(--base);
   font-size: var(--base-minor);
-  	border: .25rem solid transparent;
-  	border-radius: .25rem;
-  	margin: .125rem;
-	@media (--bp-room-to-view) {
-    	flex: 1 0 4rem;
+    border: .25rem solid transparent;
+    border-radius: .25rem;
+    margin: .125rem;
+  @media (--bp-room-to-view) {
+      flex: 1 0 4rem;
     background-color: gray(95%);
-    	padding: 1rem;
-    	text-align: left;
-    	color: inherit;
-    	border: .25rem solid transparent;
-    	font-size: var(--delta);
-	  padding: 1rem 1rem 3rem;
-    	margin: .5rem;
-    	flex: 1 0 5rem;
-    	font-weight: 400;
+      padding: 1rem;
+      text-align: left;
+      color: inherit;
+      border: .25rem solid transparent;
+      font-size: var(--delta);
+    padding: 1rem 1rem 3rem;
+      margin: .5rem;
+      flex: 1 0 5rem;
+      font-weight: 400;
     line-height: 1.5;
-	}
+  }
 }
 
 .group-div.selected { /* See specific colors for various groups below */
-  	color: inherit; 
-  	background: rgba(var(--light), 1);
-	@media (--bp-room-to-view) {
-    	font-weight: 400;
-    	border: .25rem solid gray(95%); 
-    	background: rgba(var(--light), 1);
-  	}
+    color: inherit; 
+    background: rgba(var(--light), 1);
+  @media (--bp-room-to-view) {
+      font-weight: 400;
+      border: .25rem solid gray(95%); 
+      background: rgba(var(--light), 1);
+    }
 }
 
 .group-div:hover {
   transition: background-color .5s ease, border-color .15s ease;
   /* border-color: rgba(var(--light), .35); */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #fff;
     border-color: gray(95%);
-  	}
+    }
 }
 
 .group-div::before {
@@ -638,8 +654,8 @@ a {
   width: 1rem;
   opacity: .7;
   border-radius: .5rem;
-  	border: .25rem solid transparent;
-	@media (--bp-room-to-view) {
+    border: .25rem solid transparent;
+  @media (--bp-room-to-view) {
     position: absolute;
     display: block;
     content: " ";
@@ -650,29 +666,29 @@ a {
     height: .3125rem;
     width: auto;
     border-radius: 0;
-    	border: none;
+      border: none;
   }
 }
 
 .group-div--Overview {
   /* background-color: #666666; */
   font-size: var(--base-majorly-minor);
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     font-size: var(--delta);
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
   }
 }
 
 .group-div--Overview.selected {
   /* border-color: #666666; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--Overview::before { /* Pseudo-element stripe for larger screens */
   background-color: #666666;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #666666;
   }
 }
@@ -681,7 +697,7 @@ a {
 .group-div--Overview:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #666666;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border: none;
     background-color: #666666
   }
@@ -689,21 +705,21 @@ a {
 
 .group-div--SCELC {
   /* background-color: #036564; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
   }
 }
 
 .group-div--SCELC.selected {
   /* border-color: #036564; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--SCELC::before { /* Pseudo-element stripe for larger screens */
   background-color: #036564;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #036564;
   }
 }
@@ -712,7 +728,7 @@ a {
 .group-div--SCELC:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #036564;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border: none;
     background-color: #036564;
   }
@@ -720,21 +736,21 @@ a {
 
 .group-div--COPPUL {
   /* background-color: #33A02C; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
   }
 }
 
 .group-div--COPPUL.selected {
   /* border-color: #33A02C; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--COPPUL::before { /* Pseudo-element stripe for larger screens */
   background-color: #33A02C;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #33A02C;
   }
 }
@@ -743,8 +759,8 @@ a {
 .group-div--COPPUL:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #33A02C;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #33A02C;
   }
 }
@@ -752,21 +768,21 @@ a {
 .group-div--CI-CCI {
   /* background-color: #beea7b; */
   color: rgba(var(--text), 1);
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
   }
 }
 
 .group-div--CI-CCI.selected {
   /* border-color: #beea7b; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--CI-CCI::before { /* Pseudo-element stripe for larger screens */
   background-color: #beea7b;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #beea7b;
   }
 }
@@ -775,29 +791,29 @@ a {
 .group-div--CI-CCI:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #beea7b;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #beea7b;
   }
 }
 
 .group-div--ALI {
   /* background-color: #FF7F00; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */    
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */    
   }
 }
 
 .group-div--ALI.selected {
   /* border-color: #FF7F00; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--ALI::before { /* Pseudo-element stripe for larger screens */
   background-color: #FF7F00;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #FF7F00;
   }
 }
@@ -806,29 +822,29 @@ a {
 .group-div--ALI:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #FF7F00;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #FF7F00;
   }
 }
 
 .group-div--MI-SPI {
   /* background-color: #FF4847; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
   }
 }
 
 .group-div--MI-SPI.selected {
   /* border-color: #FF4847; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--MI-SPI::before { /* Pseudo-element stripe for larger screens */
   background-color: #FF4847;
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     background-color: #FF4847;
   }
 }
@@ -837,29 +853,29 @@ a {
 .group-div--MI-SPI:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #FF4847;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #FF4847;
   }
 }
 
 .group-div--TUG {
   /* background-color: #6A3D9A; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--TUG.selected {
   /* border-color: #6A3D9A; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--TUG::before { /* Pseudo-element stripe for larger screens */
-	background-color: #6A3D9A;
-	@media (--bp-room-to-view) {
+  background-color: #6A3D9A;
+  @media (--bp-room-to-view) {
     background-color: #6A3D9A;
   }
 }
@@ -868,8 +884,8 @@ a {
 .group-div--TUG:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #6A3D9A;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #6A3D9A;
   }
 }
@@ -877,21 +893,21 @@ a {
 .group-div--VIVA {
   /* background-color: #CAB2D6; */
   color: rgba(var(--text), 1);
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--VIVA.selected {
   /* border-color: #CAB2D6; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--VIVA::before { /* Pseudo-element stripe for larger screens */
-	background-color: #CAB2D6;
-	@media (--bp-room-to-view) {
+  background-color: #CAB2D6;
+  @media (--bp-room-to-view) {
     background-color: #CAB2D6;
   }
 }
@@ -900,29 +916,29 @@ a {
 .group-div--VIVA:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #CAB2D6;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #CAB2D6;
   }
 }
 
 .group-div--WRLC {
   /* background-color: #1F78B4; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--WRLC.selected {
   /* border-color: #1F78B4; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--WRLC::before { /* Pseudo-element stripe for larger screens */
-	background-color: #1F78B4;
-	@media (--bp-room-to-view) {
+  background-color: #1F78B4;
+  @media (--bp-room-to-view) {
     background-color: #1F78B4;
   }
 }
@@ -931,29 +947,29 @@ a {
 .group-div--WRLC:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #1F78B4;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #1F78B4;
   }
 }
 
 .group-div--CNY {
   /* background-color: #A6CEE3; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--CNY.selected {
   /* border-color: #A6CEE3; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--CNY::before { /* Pseudo-element stripe for larger screens */
-	background-color: #A6CEE3;
-	@media (--bp-room-to-view) {
+  background-color: #A6CEE3;
+  @media (--bp-room-to-view) {
     background-color: #A6CEE3;
   }
 }
@@ -962,29 +978,29 @@ a {
 .group-div--CNY:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #A6CEE3;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #A6CEE3;
   }
 }
 
 .group-div--EAST {
   /* background-color: #FB9A99; */
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--EAST.selected {
   /* border-color: #FB9A99; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--EAST::before { /* Pseudo-element stripe for larger screens */
-	background-color: #FB9A99;
-	@media (--bp-room-to-view) {
+  background-color: #FB9A99;
+  @media (--bp-room-to-view) {
     background-color: #FB9A99;
   }
 }
@@ -993,8 +1009,8 @@ a {
 .group-div--EAST:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #FB9A99;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #FB9A99;
   }
 }
@@ -1002,21 +1018,21 @@ a {
 .group-div--MSCC {
   /* background-color: #FDBF6F; */
   color: rgba(var(--text), 1);
-	@media (--bp-room-to-view) {
-	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  @media (--bp-room-to-view) {
+    background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
   }
 }
 
 .group-div--MSCC.selected {
   /* border-color: #FDBF6F; */
-	@media (--bp-room-to-view) {
+  @media (--bp-room-to-view) {
     border-color: gray(95%);
   }
 }
 
 .group-div--MSCC::before { /* Pseudo-element stripe for larger screens */
-	background-color: #FDBF6F;
-	@media (--bp-room-to-view) {
+  background-color: #FDBF6F;
+  @media (--bp-room-to-view) {
     background-color: #FDBF6F;
   }
 }
@@ -1025,8 +1041,8 @@ a {
 .group-div--MSCC:hover::before { /* Pseudo-element stripe for larger screens */
   border-color: #FDBF6F;
   background-color: #ffffff;
-	@media (--bp-room-to-view) {
-    	border: none;
+  @media (--bp-room-to-view) {
+      border: none;
     background-color: #FDBF6F;
   }
 }
@@ -1050,27 +1066,27 @@ h6.group_count {
 }
 
 .popup {
-	/* TODO: Find a better approach than setting a fixed width to resolve blur issue */ 
-	/* https://github.com/mapbox/mapbox-gl-js/pull/3258#issuecomment-249975324 */
-	width:230px;
+  /* TODO: Find a better approach than setting a fixed width to resolve blur issue */ 
+  /* https://github.com/mapbox/mapbox-gl-js/pull/3258#issuecomment-249975324 */
+  width:230px;
 }
 
 h2.popup-group-title {
-	font-family: var(--font-family);
-	text-align:center;
-	padding-bottom:0px;
+  font-family: var(--font-family);
+  text-align:center;
+  padding-bottom:0px;
 }
 
 h3.popup-library-title {
-	font-family: var(--font-family);
-	text-align:center;
-	padding-bottom:0px;
-	margin:0px 0px 5px 0px;
+  font-family: var(--font-family);
+  text-align:center;
+  padding-bottom:0px;
+  margin:0px 0px 5px 0px;
 }
 
 li.popup-list {
-	font-family: var(--font-family);
-	padding:0px 10px 0px 20px;
+  font-family: var(--font-family);
+  padding:0px 10px 0px 20px;
 }
 
 /* End Map Popup */
@@ -1081,23 +1097,23 @@ li.popup-list {
 }
 
 .group-description__title {
-	margin: 0;
-	padding: 1rem 2rem 1rem 0;
-	display: inline-block;
-	vertical-align: middle;
+  margin: 0;
+  padding: 1rem 2rem 1rem 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .group-description__links {
-	margin: 0;
-	border-left: 1px solid gray(80%);
-	padding: 1rem 0 1rem 2rem;
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 1;
+  margin: 0;
+  border-left: 1px solid gray(80%);
+  padding: 1rem 0 1rem 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .group-description__links > a {
-	padding-right: .75rem;
+  padding-right: .75rem;
 }
 
 .icon {  
@@ -1122,59 +1138,59 @@ li.popup-list {
 }
 
 @media (--bp-medium) {
-	.group-description__libraries {
-		-moz-column-width: 25rem;
-		-moz-columns: 25rem;
-		-webkit-columns: 25rem;
-		columns: 25rem;
-		-moz-column-gap: 2rem;
-		-webkit-column-gap: 2rem;
-		column-gap: 2rem;
-	}
+  .group-description__libraries {
+    -moz-column-width: 25rem;
+    -moz-columns: 25rem;
+    -webkit-columns: 25rem;
+    columns: 25rem;
+    -moz-column-gap: 2rem;
+    -webkit-column-gap: 2rem;
+    column-gap: 2rem;
+  }
 }
 
 .group-description__libraries li {
-	margin: 0 0 .25rem;
+  margin: 0 0 .25rem;
 }
 
 .library__website {
-	box-sizing: border-box;
-	display: inline-block;
-	text-decoration: none;
-	height: 1.25rem;
-	width: 1.25rem;
-	border-radius: 50%;
-	vertical-align: text-bottom;
-	color: rgba(var(--light), 1);
-	font-weight: 600;
-	margin-left: .5rem;
-	overflow: hidden;
-	text-shadow: 0px 0px .5rem rgba(var(--dark), 50%);
-	opacity: .4;
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: none;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  vertical-align: text-bottom;
+  color: rgba(var(--light), 1);
+  font-weight: 600;
+  margin-left: .5rem;
+  overflow: hidden;
+  text-shadow: 0px 0px .5rem rgba(var(--dark), 50%);
+  opacity: .4;
 }
 
 .library__website:before {
-	/* content: "";
-	position: absolute;
-	top: 0;
-	left: 12.5%;
-	height: 102%;
-	width: 75%;
-	border-radius: 50%;
-	box-sizing: border-box;
-	border: 1.5px solid gray(50%); */
+  /* content: "";
+  position: absolute;
+  top: 0;
+  left: 12.5%;
+  height: 102%;
+  width: 75%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1.5px solid gray(50%); */
 }
 
 .library__website:after {
-	/* content: "";
-	position: absolute;
-	top: 0;
-	right: 37.5%;
-	height: 102%;
-	width: 25%;
-	border-radius: 50%;
-	box-sizing: border-box;
-	border: 1.5px solid gray(50%); */
+  /* content: "";
+  position: absolute;
+  top: 0;
+  right: 37.5%;
+  height: 102%;
+  width: 25%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1.5px solid gray(50%); */
 }
 
 /* Begin Group Chart */
@@ -1194,59 +1210,59 @@ li.popup-list {
  *---------------------------------------------------------------------------*/
  
 .totals {
-	background: gray(95%);
+  background: gray(95%);
 }
 
 .totals-wrap {
-	margin: 0 -.5rem;
-	padding: 2rem 1rem;
-	@media (--bp-medium) {
-	  padding: 3rem 1rem;
-	}
-	@media (--bp-large) {
-	  padding: 6rem 1rem;
-	}
+  margin: 0 -.5rem;
+  padding: 2rem 1rem;
+  @media (--bp-medium) {
+    padding: 3rem 1rem;
+  }
+  @media (--bp-large) {
+    padding: 6rem 1rem;
+  }
 }
 
 .totals-container {
-	margin: 0;
-	padding: 1rem 0;
-	@media (--bp-medium) {
-	  padding: 2rem 0;
-		display: flex;
-		flex-wrap: wrap;
-	}
+  margin: 0;
+  padding: 1rem 0;
+  @media (--bp-medium) {
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .totals-container__desc {
-	text-align: center;
-	@media (--bp-medium) {
-		box-sizing: border-box;
-		border-left: 1px solid gray(80%);	
-		padding: 2rem 0 2rem 3rem;	
-		text-align: left;
-		flex: 2 0 31rem;	  
-	}
+  text-align: center;
+  @media (--bp-medium) {
+    box-sizing: border-box;
+    border-left: 1px solid gray(80%); 
+    padding: 2rem 0 2rem 3rem;  
+    text-align: left;
+    flex: 2 0 31rem;    
+  }
 }
 
 .totals-container__desc h3 {
-	margin:0;
-	font-weight: 200;
+  margin:0;
+  font-weight: 200;
     font-size: var(--gamma);
 }
 
 .holdings-number { 
-	margin:0 auto .5rem;
-	box-sizing: border-box;
+  margin:0 auto .5rem;
+  box-sizing: border-box;
   text-transform: uppercase;
   letter-spacing: -.05em;
   font-weight: 100;
   font-size: var(--alpha);
-	text-align:center;
-	@media (--bp-medium) {
-		margin: 1em 0;
-		flex: 1 0 19rem; 
-	}
+  text-align:center;
+  @media (--bp-medium) {
+    margin: 1em 0;
+    flex: 1 0 19rem; 
+  }
 }
  
  /*----------------------------------------------------------------------------
@@ -1256,26 +1272,26 @@ li.popup-list {
  *---------------------------------------------------------------------------*/
  
 .video {
-	background: gray(80%);
+  background: gray(80%);
 }
 
 .video-wrap {
-	padding: 2rem 1rem;
-	@media (--bp-medium) {
-	  padding: 6rem 1rem;
-	}
+  padding: 2rem 1rem;
+  @media (--bp-medium) {
+    padding: 6rem 1rem;
+  }
 }
 
 .embed-container { 
-	position: relative; 
-	padding-bottom: 56.25%; 
-	height: 0; 
-	overflow: hidden; 
-	max-width: 100%; 
-	margin: 2rem 0;
-	@media (--bp-medium) {
-	  margin: 3rem 0;
-	}
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+  margin: 2rem 0;
+  @media (--bp-medium) {
+    margin: 3rem 0;
+  }
 }
 
 .embed-container:last-child {
@@ -1285,11 +1301,11 @@ li.popup-list {
 .embed-container iframe, 
 .embed-container object, 
 .embed-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
 }
  
  /*----------------------------------------------------------------------------
@@ -1299,66 +1315,66 @@ li.popup-list {
  *---------------------------------------------------------------------------*/
  
  .search__input-group {
-	 display: flex;
-	 margin: 1rem 0 3rem;
+   display: flex;
+   margin: 1rem 0 3rem;
  }
  
  .search__input {
-	flex: 1 1 62.8%;
-	padding: 1rem;
-	font-size: var(--base);
-	background: gray(95%);
-	border: none;
-	border-radius: 0;
-	-webkit-appearance: none;
+  flex: 1 1 62.8%;
+  padding: 1rem;
+  font-size: var(--base);
+  background: gray(95%);
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
  }
  
  .search__button {
-	flex: 1 1 auto;
-	padding: 1rem;
-	font-size: var(--base);
-	text-transform: uppercase;
-	letter-spacing: .01em;
-	font-weight: 700;
-	background: gray(70%);
-	color: rgba(var(--light), 1);
-	border-radius: 0;
-	-webkit-appearance: none;
+  flex: 1 1 auto;
+  padding: 1rem;
+  font-size: var(--base);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  font-weight: 700;
+  background: gray(70%);
+  color: rgba(var(--light), 1);
+  border-radius: 0;
+  -webkit-appearance: none;
  }
 
 /* Begin Search Results Listing */
 
 .search__results {
-	margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .search__item {/* 
-	background: gray(95%);
-	padding: 1rem; */
-	display: flex;
-	margin-bottom: 2rem;
+  background: gray(95%);
+  padding: 1rem; */
+  display: flex;
+  margin-bottom: 2rem;
 }
 
 .search__item__desc {
-	flex: 1 1 auto;
-	padding-right: 2rem;
+  flex: 1 1 auto;
+  padding-right: 2rem;
 }
 
 .search__groups {
-	margin-top: .5rem;
+  margin-top: .5rem;
 }
 
 .search__item__link {
-	flex: 0 0 3rem;
+  flex: 0 0 3rem;
 }
 
 .search__link img {
-	width: 3rem;
-	height: auto;
+  width: 3rem;
+  height: auto;
 }
 
 .search__author {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 /* End Search Results Listing */
@@ -1366,110 +1382,110 @@ li.popup-list {
 /* Begin Search Result Groups */
   
 .search__groups {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
  
 .search__groups__item {
-	list-style: none;
-	margin: .25rem .25rem 0 0;
-	font-size: var(--epsilon);
-	display: inline-block;
-	background-color: gray(95%);
-	color: rgba(var(--text), .8);
-	padding: .25rem .5rem;
-	border-radius: .25rem;
-	border-left: .25rem solid transparent;
-	font-weight: 700;
-	min-width: 5rem;
-	text-align: left;
+  list-style: none;
+  margin: .25rem .25rem 0 0;
+  font-size: var(--epsilon);
+  display: inline-block;
+  background-color: gray(95%);
+  color: rgba(var(--text), .8);
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+  border-left: .25rem solid transparent;
+  font-weight: 700;
+  min-width: 5rem;
+  text-align: left;
 }
 
 .search__groups__item .numeral {
-	/* color: rgba(var(--light), 1); */
-	padding-left: .125rem;
-	font-weight: 500;
+  /* color: rgba(var(--light), 1); */
+  padding-left: .125rem;
+  font-weight: 500;
 }
 
 .search__groups__item.east {
-	border-color: #FB9A99;
+  border-color: #FB9A99;
 }
 
 .search__groups__item.wrlc {
-	border-color: #6A3D9A;
+  border-color: #6A3D9A;
 }
 
 .search__groups__item.mi-spi {
-	border-color: #FF4847;
+  border-color: #FF4847;
 }
 
 .search__groups__item.viva {
-	border-color: #CAB2D6;
+  border-color: #CAB2D6;
 }
 
 .search__groups__item.ci-cci {
-	border-color: #6A3D9A;
+  border-color: #6A3D9A;
 }
 
 .search__groups__item.ali {
-	border-color: #A6CEE3;
+  border-color: #A6CEE3;
 }
 
 .search__groups__item.coppul {
-	border-color: #33A02C;
+  border-color: #33A02C;
 }
 
 .search__groups__item.tug {
-	border-color: #FF7F00;
+  border-color: #FF7F00;
 }
 
 .search__groups__item.scelc {
-	border-color: #036564;
+  border-color: #036564;
 }
 
 .search__groups__item.mms {
-	border-color: #666666;
+  border-color: #666666;
 }
 /* End Search Result Groups */
 
 /* Begin Table Styles */
  
 table {
-	border-collapse: collapse;
-	width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td, th {
-	text-align: left;
-	line-height: 1.2;
-	padding: 1rem;
+  text-align: left;
+  line-height: 1.2;
+  padding: 1rem;
 }
  
 thead th {
-	font-size: var(--epsilon);
-	text-transform: uppercase;
-	letter-spacing: .01em;
-	font-weight: 700;
-	color: gray(30%);
-	vertical-align: bottom;
+  font-size: var(--epsilon);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  font-weight: 700;
+  color: gray(30%);
+  vertical-align: bottom;
 }
 
 tbody td {
-	background: gray(95%);
-	vertical-align: top;
+  background: gray(95%);
+  vertical-align: top;
 }
 
 .table__title {
-	width: 60%;	
+  width: 60%; 
 }
 
 .table__publisher {
-	width: 25%;	
+  width: 25%; 
 }
 
 .table__pub-date {
-	width: 15%;	
-	text-align: right;
+  width: 15%; 
+  text-align: right;
 }
  
  /* End Table Styles */
@@ -1510,28 +1526,28 @@ h6.credit {
 /* Scroll Animation Styles */
 
 .visible {
-	transition: opacity 3.5s ease;
-	opacity: 1.0;
+  transition: opacity 3.5s ease;
+  opacity: 1.0;
 }
 
 .invisible {
-	transition: opacity 1.5s ease;
-	opacity: 0.0;
+  transition: opacity 1.5s ease;
+  opacity: 0.0;
 }
 
 .holdings-number {
-	transition: all 2.5s ease;
-	opacity: 1.0;
+  transition: all 2.5s ease;
+  opacity: 1.0;
 }
 
 .animate-breach {
-	transition: all 2.5s ease;
-	opacity: 1;
-	transform: translate(0, 0);
+  transition: all 2.5s ease;
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .animate-dive {
-	transition: all 0s ease;
-	opacity: 0;
-	transform: translate(0, 50%);
+  transition: all 0s ease;
+  opacity: 0;
+  transform: translate(0, 50%);
 }
