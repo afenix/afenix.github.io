@@ -136,26 +136,6 @@ function initGL() {
           || navigator.maxTouchPoints;       // works on IE10/11 and Surface
     }
 
-    // var eventFired = 0;
-
-    // if ($(window).width() < 960) {
-    //     console.log('Less than 960');
-    // }
-    // else {
-    //     console.log('More than 960');
-    //     eventFired = 1;
-    // }
-
-    // $(window).on('resize', function() {
-    //     if (!eventFired) {
-    //         if ($(window).width() < 960) {
-    //             console.log('Less than 960 resize');
-    //         } else {
-    //             console.log('More than 960 resize');
-    //         }
-    //     }
-    // });
-
     // Add and style vector tiles from mapbox of shared collection data
      map.on('load', function () {
         var windowWidth = $(window).width();
